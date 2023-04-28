@@ -35,6 +35,11 @@ module.exports = {
     libraryTarget: 'umd',
     clean: true
   },
+  performance: {
+    hints: false,
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000
+  },
   optimization: {
     minimize: true,
     minimizer: [
@@ -43,7 +48,9 @@ module.exports = {
     ],
   },
   devServer: {
-    port: 3030, // you can change the port
+    port: 3030, // you can change the port,
+    compress: true,
+    hot: true
   },
   module: {
     rules: [
@@ -86,9 +93,9 @@ module.exports = {
     }),
     new webpack.BannerPlugin(banner),
     new HtmlWebpackPlugin({
-      template: './public/index.html',
+      template: './src/index.html',
       filename: './index.html',
-      favicon: './public/favicon.ico'
+      favicon: './src/favicon.ico'
     })
   ],
   resolve: {
