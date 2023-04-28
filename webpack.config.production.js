@@ -25,20 +25,20 @@ const banner = `
 `;
 
 module.exports = {
-  mode: "development",
+  mode: "production",
   devtool: 'source-map',
   entry: './src/index.tsx',
   output: {
     filename: 'index.js',
     path: path.resolve(__dirname, 'build'),
-    library: "Privacy Perfect ISMS",
+    library: "Multi Select Component",
     libraryTarget: 'umd',
     clean: true
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
+    extensions: ['.ts', '.tsx', '.js', '.css', '.scss'],
     alias: {
-      app: path.resolve(__dirname, 'src')
+      app: path.resolve(__dirname, 'src/js')
     }
   },
   performance: {
@@ -81,14 +81,11 @@ module.exports = {
       { 
         test: /\.scss$/,
         use: [
-          'style-loader',
+          MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
-              modules: {
-                mode: 'local',
-                localIdentName: '[local]-[hash:base64:5]'
-              }
+              modules: true
             }
           },
           'sass-loader'

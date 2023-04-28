@@ -8,6 +8,10 @@
     "allowJs": true,
     "sourceMap": true,
     "noEmit": false,
+    "baseUrl": "src",
+    "paths": { 
+      "app/*": ["*"]
+    },
     "declaration": true,
     "skipLibCheck": true,
     "allowSyntheticDefaultImports": true,

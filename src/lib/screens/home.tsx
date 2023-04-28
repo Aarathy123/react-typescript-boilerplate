@@ -1,7 +1,7 @@
 import React from 'react';
-
+import classes from './styles.scss';
 const HomePage = () => (
-  <div>Home Page</div>
+  <div className={classes.heading}>Home Page</div>
 );
 
 export default HomePage;

@@ -31,6 +31,7 @@
     "html-webpack-plugin": "^5.5.1",
     "lodash": "^4.17.21",
     "mini-css-extract-plugin": "^2.7.5",
+    "node-sass": "^8.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.5",
@@ -42,6 +43,7 @@
     "style-loader": "^3.3.2",
     "terser-webpack-plugin": "^5.3.7",
     "ts-loader": "^9.4.2",
+    "typescript": "^5.0.4",
     "url-loader": "^4.1.1",
     "web-vitals": "^2.1.4",
     "webpack": "^5.80.0",
@@ -50,8 +52,8 @@
   },
   "scripts": {
     "start": "webpack watch && tsc",
-    "serve": "webpack serve && tsc --mode development",
-    "build": "webpack && tsc --mode production",
+    "serve": "webpack serve && tsc --mode development --config webpack.config.js",
+    "build": "webpack && tsc --mode production --config webpack.config.production.js",
     "test": "jest"
   },
   "repository": {
